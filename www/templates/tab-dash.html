@@ -1,0 +1,32 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+  <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+  <ion-list>
+    <ion-item ng-repeat="item in items"></ion-item>
+  </ion-list>
+    <div class="list card">
+
+  <div class="item item-avatar">
+    <img src="http://openweathermap.org/img/w/{{weatherToday.weather[0].icon}}.png">
+    <p>{{weatherToday.dt_txt}}</p>
+    <p>{{weatherToday.weather[0].description}}</p>
+  </div>
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <p>Humedad: {{weatherToday.humidity}}</p>
+  </div>
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <p>Temperatura: {{weatherToday.temp.day}}</p>
+  </div>
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <p>Temperatura Máxima: {{weatherToday.temp.max}}</p>
+  </div>
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <p>Temperatura Minima: {{weatherToday.temp.min}}</p>
+  </div>
+</div>
+
+  </ion-content>
+</ion-view>
